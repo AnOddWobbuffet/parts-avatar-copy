@@ -3,7 +3,12 @@
 
 def get_vehicle_year(data):
     # TODO: Write your logic here safely
-    pass
+    if data.get('specs', None):
+        if data['specs']['model_info']:
+            if data['specs']['model_info']['year']:
+                return data['specs']['model_info']['year']
+    
+    return 'Unkown'
 
 # Test Case
 vehicle = {'specs': {'model_info': {'year': 2024}}}

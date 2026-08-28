@@ -6,8 +6,14 @@ def get_pending_customers():
     
     # Task: Select customer email and order_date where status is 'Pending'.
     query = """
-    -- WRITE YOUR SQL HERE
+    select email, order_date from Customers
+    join Orders on Customers.customer_id=Orders.customer_id
+    where Orders.status='Pending'
     """
     
     cursor.execute(query)
-    return cursor.fetchall()
+    print(cursor.fetchall())
+
+get_pending_customers()
+# (1, 'John Doe', 'john@example.com', '2023-01-01'),
+# (3, 'Alex Rivard', 'alex@parts.ca', '2024-01-10'),

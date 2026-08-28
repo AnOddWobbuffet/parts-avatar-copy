@@ -4,7 +4,13 @@
 
 def count_categories(categories):
     # TODO: Write your logic here
-    pass
+    result = {}
+    for cat in categories:
+        if result.get(cat, ''):
+            result[cat] += 1
+        else:
+            result[cat] = 1
+    return result
 
 # Test Case
 data = ['Brakes', 'Engine', 'Brakes', 'Tools', 'Engine', 'Brakes']
